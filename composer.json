@@ -1,0 +1,23 @@
+{
+    "name": "oddevan/mimic-you",
+    "description": "Create component-based UI libraries in PHP",
+    "type": "library",
+    "require": {
+        "league/plates": "^3.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.3"
+    },
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "oddEvan\\MimicYou\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evan Hildreth",
+            "email": "me@eph.me"
+        }
+    ]
+}
