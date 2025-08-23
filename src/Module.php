@@ -1,6 +1,6 @@
 <?php
 
-namespace oddEvan\MimicYou;
+namespace oddEvan\CapsuleUI;
 
 use Smolblog\Foundation\v2\Module as V2Module;
 use Smolblog\Foundation\v2\Module\FileDiscoveryKit;

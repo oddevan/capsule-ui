@@ -1,6 +1,6 @@
 <?php
 
-namespace oddEvan\MimicYou;
+namespace oddEvan\CapsuleUI;
 
 interface ComponentEngine {
 	/**

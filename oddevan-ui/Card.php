@@ -2,12 +2,12 @@
 
 namespace oddEvan\UI;
 
-use oddEvan\MimicYou\Component;
-use oddEvan\MimicYou\Component\JustRenderKit;
-use oddEvan\MimicYou\Component\StyledComponent;
-use oddEvan\MimicYou\ComponentEngine;
+use oddEvan\CapsuleUI\Component;
+use oddEvan\CapsuleUI\Component\JustRenderKit;
+use oddEvan\CapsuleUI\Component\StyledComponent;
+use oddEvan\CapsuleUI\ComponentEngine;
 
-use function oddEvan\MimicYou\esc;
+use function oddEvan\CapsuleUI\esc;
 
 class Card implements Component, StyledComponent {
 	use JustRenderKit;

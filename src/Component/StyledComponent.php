@@ -1,8 +1,8 @@
 <?php
 
-namespace oddEvan\MimicYou\Component;
+namespace oddEvan\CapsuleUI\Component;
 
-use oddEvan\MimicYou\Component;
+use oddEvan\CapsuleUI\Component;
 
 /**
  * Indicates that a Component has associated styles.

@@ -1,5 +1,5 @@
 {
-  "name": "oddevan/mimic-you",
+  "name": "oddevan/capsule-ui",
   "description": "Create component-based UI libraries in PHP",
   "type": "library",
   "repositories": [
@@ -21,7 +21,7 @@
   "license": "Apache-2.0",
   "autoload": {
     "psr-4": {
-      "oddEvan\\MimicYou\\": "src/",
+      "oddEvan\\CapsuleUI\\": "src/",
       "oddEvan\\UI\\": "oddevan-ui/"
     },
     "files": [

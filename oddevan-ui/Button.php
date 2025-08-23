@@ -2,15 +2,15 @@
 
 namespace oddEvan\UI;
 
-use oddEvan\MimicYou\Component;
-use oddEvan\MimicYou\Component\JustRenderKit;
-use oddEvan\MimicYou\Component\StyledComponent;
-use oddEvan\MimicYou\ComponentEngine;
+use oddEvan\CapsuleUI\Component;
+use oddEvan\CapsuleUI\Component\JustRenderKit;
+use oddEvan\CapsuleUI\Component\StyledComponent;
+use oddEvan\CapsuleUI\ComponentEngine;
 use Smolblog\Foundation\Exceptions\InvalidValueProperties;
 use Smolblog\Foundation\v2\Value\Traits\Validated;
 
-use function oddEvan\MimicYou\attributes;
-use function oddEvan\MimicYou\esc;
+use function oddEvan\CapsuleUI\attributes;
+use function oddEvan\CapsuleUI\esc;
 
 class Button implements Component, StyledComponent, Validated
 {

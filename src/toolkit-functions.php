@@ -1,6 +1,6 @@
 <?php
 
-namespace oddEvan\MimicYou;
+namespace oddEvan\CapsuleUI;
 
 function attributes(string ...$attrs): string {
 	$output = '';

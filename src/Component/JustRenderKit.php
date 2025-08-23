@@ -1,6 +1,6 @@
 <?php
 
-namespace oddEvan\MimicYou\Component;
+namespace oddEvan\CapsuleUI\Component;
 
 /**
  * Provides a basic implementation of the html() method required by Component that captures the output of render()
