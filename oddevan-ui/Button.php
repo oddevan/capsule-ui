@@ -12,15 +12,19 @@ use Smolblog\Foundation\v2\Value\Traits\Validated;
 use function oddEvan\MimicYou\attributes;
 use function oddEvan\MimicYou\esc;
 
-class Button implements Component, StyledComponent, Validated {
+class Button implements Component, StyledComponent, Validated
+{
 	use JustRenderKit;
 
-	public static function getKey(): string { return 'button'; }
+	public static function getKey(): string
+	{
+		return 'button';
+	}
 
 	public static function styles(): string
 	{
 		return <<<EOF
-			:where(.c-button) {
+			:where(.button) {
 				background: #036;
 				color: #fff;
 				border: 0;
@@ -33,19 +37,21 @@ class Button implements Component, StyledComponent, Validated {
 
 	public function __construct(
 		public readonly string $label,
-		public readonly ?string $href,
-		public readonly ?string $action,
+		public readonly ?string $href = null,
+		public readonly ?string $action = null,
 	) {
 		$this->validate();
 	}
 
-	public function validate(): void {
+	public function validate(): void
+	{
 		if (empty($this->href) && empty($this->action)) {
 			throw new InvalidValueProperties("Either 'href' or 'action' must be set.");
 		}
 	}
 
-	public function render(?ComponentEngine $engine = null): void {
+	public function render(?ComponentEngine $engine = null): void
+	{
 		$tag = '';
 		$attrs = '';
 		if (!empty($this->href)) {
@@ -57,9 +63,9 @@ class Button implements Component, StyledComponent, Validated {
 			$attrs = attributes(onClick: $this->action);
 		}
 ?>
-	<<?= $tag ?> <?= $attrs ?> class="c-button">
-		<?= esc($this->label); ?>
-	</<?= $tag ?>>
+		<<?= $tag ?> <?= $attrs ?> class="button">
+			<?= esc($this->label); ?>
+		</<?= $tag ?>>
 <?php
 	}
 }
