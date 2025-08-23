@@ -2,27 +2,30 @@
 
 namespace oddEvan\MimicYou;
 
+use Smolblog\Foundation\v2\Registry\Registerable;
+
 /**
  * A user interface component. Takes in arbitrary props and outputs HTML.
  */
-interface Component {
+interface Component extends Registerable
+{
 	/**
-	 * Render the component to the screen using the given props.
+	 * Render the component to the screen using its props.
 	 * 
 	 * Equivalent to `echo $this->html()`.
 	 *
-	 * @param mixed ...$props Properties for this rendering.
+	 * @param ComponentEngine|null $engine ComponentEngine for rendering child components.
 	 * @return void
 	 */
-	public function render(mixed ...$props): void;
+	public function render(?ComponentEngine $engine = null): void;
 
 	/**
 	 * Render the component to an HTML string that can be used elsewhere.
 	 * 
 	 * Equivalent to capturing the output of `$this->render()`.
 	 *
-	 * @param mixed ...$props Properties for this rendering.
+	 * @param ComponentEngine|null $engine ComponentEngine for rendering child components.
 	 * @return string HTML representation of the Component.
 	 */
-	public function html(mixed ...$props): string;
+	public function html(?ComponentEngine $engine = null): string;
 }
