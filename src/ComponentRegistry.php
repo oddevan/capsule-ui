@@ -13,7 +13,7 @@ class ComponentRegistry implements Service, Registry, ComponentEngine {
 	public static function getInterfaceToRegister(): string {
 		return Component::class;
 	}
-	
+
 	/**
 	 * Get the class name for a given component key.
 	 *
@@ -24,11 +24,10 @@ class ComponentRegistry implements Service, Registry, ComponentEngine {
 		return $this->library[$key] ?? null;
 	}
 
-	public function make(string $component, mixed ...$props): Component
-	{
+	public function make(string $component, mixed ...$props): Component {
 		$componentClass = $this->componentClass($component);
 		if (!isset($componentClass)) {
-			throw new ComponentError("ComponentRegistry::render called for component {$component} which is not registered.");
+			throw new ComponentError("ComponentRegistry::make called for unregistered component {$component}.");
 		}
 
 		try {
@@ -38,8 +37,13 @@ class ComponentRegistry implements Service, Registry, ComponentEngine {
 		}
 	}
 
-	public function render(string $component, mixed ...$props): void
-	{
+	public function render(string $component, mixed ...$props): void {
 		$this->make($component, ...$props)->render($this);
+	}
+
+	public function buffer(string $component, mixed ...$props): string {
+		ob_start();
+		$this->render($component, ...$props);
+		return ob_get_clean();
 	}
 }

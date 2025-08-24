@@ -2,6 +2,9 @@
 
 namespace oddEvan\CapsuleUI;
 
+use function htmlspecialchars;
+use function rtrim;
+
 function attributes(string ...$attrs): string {
 	$output = '';
 	foreach ($attrs as $attribute => $value) {
@@ -17,5 +20,5 @@ function attributes(string ...$attrs): string {
 }
 
 function esc(string $text): string {
-	return htmlspecialchars($text, flags: ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML5, double_encode: false);
+	return htmlspecialchars($text, flags: ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5, double_encode: false);
 }

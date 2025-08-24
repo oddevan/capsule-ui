@@ -4,4 +4,5 @@ namespace oddEvan\CapsuleUI;
 
 use Exception;
 
-class ComponentError extends Exception {}
+class ComponentError extends Exception {
+}

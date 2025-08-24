@@ -3,7 +3,6 @@
 namespace oddEvan\UI;
 
 use oddEvan\CapsuleUI\Component;
-use oddEvan\CapsuleUI\Component\JustRenderKit;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 use Smolblog\Foundation\Exceptions\InvalidValueProperties;
@@ -12,17 +11,12 @@ use Smolblog\Foundation\v2\Value\Traits\Validated;
 use function oddEvan\CapsuleUI\attributes;
 use function oddEvan\CapsuleUI\esc;
 
-class Button implements Component, StyledComponent, Validated
-{
-	use JustRenderKit;
-
-	public static function getKey(): string
-	{
+class Button implements Component, StyledComponent, Validated {
+	public static function getKey(): string {
 		return 'button';
 	}
 
-	public static function styles(): string
-	{
+	public static function styles(): string {
 		return <<<EOF
 			:where(.button) {
 				background: #036;
@@ -43,15 +37,13 @@ class Button implements Component, StyledComponent, Validated
 		$this->validate();
 	}
 
-	public function validate(): void
-	{
+	public function validate(): void {
 		if (empty($this->href) && empty($this->action)) {
 			throw new InvalidValueProperties("Either 'href' or 'action' must be set.");
 		}
 	}
 
-	public function render(?ComponentEngine $engine = null): void
-	{
+	public function render(?ComponentEngine $engine = null): void {
 		$tag = '';
 		$attrs = '';
 		if (!empty($this->href)) {

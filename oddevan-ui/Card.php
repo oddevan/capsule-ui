@@ -10,12 +10,11 @@ use oddEvan\CapsuleUI\ComponentEngine;
 use function oddEvan\CapsuleUI\esc;
 
 class Card implements Component, StyledComponent {
-	use JustRenderKit;
+	public static function getKey(): string {
+		return 'card';
+	}
 
-	public static function getKey(): string { return 'card'; }
-
-	public static function styles(): string
-	{
+	public static function styles(): string {
 		return <<<EOF
 			:where(.card) {
 				border: 1px solid gray;
@@ -36,13 +35,10 @@ class Card implements Component, StyledComponent {
 		public readonly string $submitButtonText,
 		public readonly ?string $cancelButtonText = null,
 		public readonly int $headlineLevel = 2,
-	)
-	{
-		
+	) {
 	}
 
-	public function render(?ComponentEngine $engine = null): void
-	{
+	public function render(?ComponentEngine $engine = null): void {
 		$hTag = 'h' . $this->headlineLevel;
 
 		?>
