@@ -3,7 +3,6 @@
 namespace oddEvan\UI;
 
 use oddEvan\CapsuleUI\Component;
-use oddEvan\CapsuleUI\Component\JustRenderKit;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 

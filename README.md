@@ -35,12 +35,12 @@ Once I get this and that uploaded to Packagist, it'll be simpler. Until then:
 
 ## Usage
 
-More detailed writeup to come, but basically create an instance of `oddEvan\CapsuleUi\ComponentManager` with the
+More detailed writeup to come, but basically call `oddEvan\CapsuleUi\CapsuleUi::createRegistry` with the
 preferred modules, then use the `ComponentRegistry` to render:
 
 ```php
-$manager = new oddEvan\MimicYou\ComponentManager(oddEvan\UI\Module::class);
-$manager->registry->render(
+$registry = new oddEvan\CapsuleUi\CapsuleUi::createRegistry(oddEvan\UI\Module::class);
+$registry->render(
   'card',
   headline: 'Headline',
   description: 'This is a card.',

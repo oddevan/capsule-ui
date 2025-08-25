@@ -2,13 +2,20 @@
 
 namespace oddEvan\CapsuleUI;
 
+use oddEvan\CapsuleUI\Component\StyledComponent;
 use Smolblog\Foundation\Service;
 use Smolblog\Foundation\v2\Registry\Registry;
 use Smolblog\Foundation\v2\Registry\RegistryKit;
 use Throwable;
 
+use function array_filter;
+use function ob_get_clean;
+use function ob_start;
+
 class ComponentRegistry implements Service, Registry, ComponentEngine {
 	use RegistryKit;
+
+	private string $styles;
 
 	public static function getInterfaceToRegister(): string {
 		return Component::class;
@@ -41,9 +48,18 @@ class ComponentRegistry implements Service, Registry, ComponentEngine {
 		$this->make($component, ...$props)->render($this);
 	}
 
-	public function buffer(string $component, mixed ...$props): string {
-		ob_start();
-		$this->render($component, ...$props);
-		return ob_get_clean();
+	public function allStyles(): string {
+		$this->styles ??= $this->createAllStyles();
+		return $this->styles;
+	}
+
+	private function createAllStyles(): string {
+		/** @var class-string<StyledComponent>[] */
+		$styled = array_filter(
+			$this->library,
+			fn($cmp) => is_a($cmp, StyledComponent::class, allow_string: true)
+		);
+
+		return array_reduce($styled, fn($css, $cmp) => $css .= $cmp::styles() . "\n\n", '');
 	}
 }
