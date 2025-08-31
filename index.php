@@ -1,7 +1,6 @@
 <?php
 
 use oddEvan\CapsuleUI\CapsuleUI;
-use oddEvan\CapsuleUI\ComponentManager;
 use oddEvan\CapsuleUI\TrackingRegistry;
 
 require_once 'vendor/autoload.php';

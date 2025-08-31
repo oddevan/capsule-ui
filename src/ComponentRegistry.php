@@ -9,8 +9,6 @@ use Smolblog\Foundation\v2\Registry\RegistryKit;
 use Throwable;
 
 use function array_filter;
-use function ob_get_clean;
-use function ob_start;
 
 class ComponentRegistry implements Service, Registry, ComponentEngine {
 	use RegistryKit;

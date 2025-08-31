@@ -1,7 +1,9 @@
 <?php
 
-namespace oddEvan\CapsuleUI;
+namespace oddEvan\CapsuleUI\Component;
 
+use oddEvan\CapsuleUI\Component;
+use oddEvan\CapsuleUI\ComponentEngine;
 use Smolblog\Foundation\v2\Value;
 
 class GenericHtmlComponent implements Value, Component {

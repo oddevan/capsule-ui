@@ -24,7 +24,8 @@
   "autoload": {
     "psr-4": {
       "oddEvan\\CapsuleUI\\": "src/",
-      "oddEvan\\UI\\": "oddevan-ui/"
+      "oddEvan\\UI\\": "oddevan-ui/",
+      "oddEvan\\PillTimer\\Website\\": "pilltimer-www/"
     },
     "files": [
       "src/toolkit-functions.php"

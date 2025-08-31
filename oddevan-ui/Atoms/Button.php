@@ -1,6 +1,6 @@
 <?php
 
-namespace oddEvan\UI;
+namespace oddEvan\UI\Atoms;
 
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\Component\StyledComponent;
