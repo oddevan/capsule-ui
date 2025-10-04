@@ -4,13 +4,13 @@ namespace oddEvan\UI\Organisms;
 
 use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
+use oddEvan\CapsuleUI\Component\ComponentKit;
 use oddEvan\CapsuleUI\Component\KeyFromClassNameKit;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 
 class Navbar implements Component, StyledComponent {
-	use ValueKit;
-	use KeyFromClassNameKit;
+	use ComponentKit;
 
 	public static function styles(): string {
 		return <<<EOF

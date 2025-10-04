@@ -3,11 +3,14 @@
 namespace oddEvan\PillTimer\Website;
 
 use Cavatappi\Foundation\Validation\Validated;
+use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\ComponentEngine;
 use oddEvan\CapsuleUI\ComponentError;
 
 readonly class BootstrapCard implements Component, Validated {
+	use ValueKit;
+
 	public static function getKey(): string {
 		return 'card';
 	}

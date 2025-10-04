@@ -6,6 +6,7 @@ use Cavatappi\Foundation\Exceptions\InvalidValueProperties;
 use Cavatappi\Foundation\Validation\Validated;
 use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
+use oddEvan\CapsuleUI\Component\ComponentKit;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 
@@ -13,11 +14,7 @@ use function oddEvan\CapsuleUI\attributes;
 use function oddEvan\CapsuleUI\esc;
 
 class Button implements Component, StyledComponent, Validated {
-	use ValueKit;
-
-	public static function getKey(): string {
-		return 'button';
-	}
+	use ComponentKit;
 
 	public static function styles(): string {
 		return <<<EOF

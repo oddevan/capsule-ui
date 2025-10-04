@@ -3,11 +3,12 @@
 namespace oddEvan\PillTimer\Website;
 
 use oddEvan\CapsuleUI\Component;
+use oddEvan\CapsuleUI\Component\ComponentKit;
 use oddEvan\CapsuleUI\Component\KeyFromClassNameKit;
 use oddEvan\CapsuleUI\ComponentEngine;
 
 class GlobalNav implements Component {
-	use KeyFromClassNameKit;
+	use ComponentKit;
 
 	public function render(?ComponentEngine $engine = null): void {
 		?>

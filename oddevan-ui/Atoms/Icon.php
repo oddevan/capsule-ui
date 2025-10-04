@@ -3,12 +3,12 @@
 namespace oddEvan\UI\Atoms;
 
 use Cavatappi\Foundation\Value\ValueKit;
+use oddEvan\CapsuleUI\Component\ComponentKit;
 use oddEvan\CapsuleUI\Component\KeyFromClassNameKit;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 
 class Icon implements StyledComponent {
-	use ValueKit;
-	use KeyFromClassNameKit;
+	use ComponentKit;
 
 	public static function styles(): string {
 		return <<< EOF

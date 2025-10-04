@@ -12,8 +12,6 @@ interface Component extends Registerable, Value {
 	/**
 	 * Render the component to the screen using its props.
 	 *
-	 * Equivalent to `echo $this->html()`.
-	 *
 	 * @param ComponentEngine|null $engine ComponentEngine for rendering child components.
 	 * @return void
 	 */

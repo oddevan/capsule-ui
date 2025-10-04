@@ -3,11 +3,11 @@
 namespace oddEvan\PillTimer\Website;
 
 use oddEvan\CapsuleUI\Component;
-use oddEvan\CapsuleUI\Component\KeyFromClassNameKit;
+use oddEvan\CapsuleUI\Component\ComponentKit;
 use oddEvan\CapsuleUI\ComponentEngine;
 
 class FeatureGrid implements Component {
-	use KeyFromClassNameKit;
+	use ComponentKit;
 
 	public function render(?ComponentEngine $engine = null): void {
 		?>

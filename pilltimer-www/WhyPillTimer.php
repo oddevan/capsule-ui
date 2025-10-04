@@ -2,12 +2,13 @@
 
 namespace oddEvan\PillTimer\Website;
 
+use oddEvan\CapsuleUI\Component\ComponentKit;
 use oddEvan\CapsuleUI\Component\KeyFromClassNameKit;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 
 class WhyPillTimer implements StyledComponent {
-	use KeyFromClassNameKit;
+	use ComponentKit;
 
 	public static function styles(): string {
 		return <<<EOF
