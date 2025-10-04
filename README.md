@@ -5,27 +5,21 @@ Javascript framework is embracing server-side rendering, so why not just skip st
 
 ## Installation
 
-Don't. It's not on Packagist yet. I'm using an in-progress version of the [Smolblog framework][sb-fx] to build this.
+Don't. It's not on Packagist yet. I'm using an in-progress version of the [Cavatappi framework][sb-fx] to build this.
 Once I get this and that uploaded to Packagist, it'll be simpler. Until then:
 
-[sb-fx]: https://github.com/smolblog/smolblog/tree/refactor/value-interface/packages/framework/foundation
+[sb-fx]: https://github.com/cavatappiphp/foundation
 
-1) Add both this repo and the [Smolblog monorepo][sb-mono] to your `composer.json`:
+1) Add this repo to your `composer.json`:
 
 ```json
 [
-  {
-    "type": "vcs",
-    "url": "https://github.com/smolblog/smolblog"
-  },
   {
     "type": "vcs",
     "url": "https://github.com/oddevan/capsule-ui"
   }
 ]
 ```
-
-[sb-mono]: https://github.com/smolblog/smolblog
 
 2) Add this to your `composer.json`:
 

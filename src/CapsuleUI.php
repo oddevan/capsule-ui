@@ -2,10 +2,10 @@
 
 namespace oddEvan\CapsuleUI;
 
-use Smolblog\Foundation\v2\Module;
-use Smolblog\Foundation\v2\Module\FileDiscoveryKit;
-use Smolblog\Foundation\v2\Module\ModuleKit;
-use Smolblog\Foundation\v2\Registry\RegistryConfiguratorKit;
+use Cavatappi\Foundation\Module;
+use Cavatappi\Foundation\Module\FileDiscoveryKit;
+use Cavatappi\Foundation\Module\ModuleKit;
+use Cavatappi\Foundation\Registry\RegistryUtils;
 
 class CapsuleUI implements Module {
 	use FileDiscoveryKit;
@@ -22,15 +22,9 @@ class CapsuleUI implements Module {
 			static::discoverableClasses(),
 		);
 
-		$configurator = new class () {
-			use RegistryConfiguratorKit {
-				getImplementingClassesForRegistry as public;
-			}
-		};
-
 		$registry = new ComponentRegistry();
 		$registry->configure(
-			$configurator->getImplementingClassesForRegistry($classInterfaceMap, ComponentRegistry::class)
+			RegistryUtils::getImplementingClassesForRegistry($classInterfaceMap, ComponentRegistry::class)
 		);
 
 		return $registry;

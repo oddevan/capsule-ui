@@ -2,6 +2,7 @@
 
 namespace oddEvan\UI;
 
+use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
@@ -9,6 +10,8 @@ use oddEvan\CapsuleUI\ComponentEngine;
 use function oddEvan\CapsuleUI\esc;
 
 class Card implements Component, StyledComponent {
+	use ValueKit;
+
 	public static function getKey(): string {
 		return 'card';
 	}

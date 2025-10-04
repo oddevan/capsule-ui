@@ -2,11 +2,14 @@
 
 namespace oddEvan\CapsuleUI\Component;
 
+use Cavatappi\Foundation\Value;
+use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\ComponentEngine;
-use Smolblog\Foundation\v2\Value;
 
 class GenericHtmlComponent implements Value, Component {
+	use ValueKit;
+
 	public static function getKey(): string {
 		return 'generic-html';
 	}

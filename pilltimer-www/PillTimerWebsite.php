@@ -2,9 +2,9 @@
 
 namespace oddEvan\PillTimer\Website;
 
-use Smolblog\Foundation\v2\Module;
-use Smolblog\Foundation\v2\Module\FileDiscoveryKit;
-use Smolblog\Foundation\v2\Module\ModuleKit;
+use Cavatappi\Foundation\Module;
+use Cavatappi\Foundation\Module\FileDiscoveryKit;
+use Cavatappi\Foundation\Module\ModuleKit;
 
 class PillTimerWebsite implements Module {
 	use FileDiscoveryKit;

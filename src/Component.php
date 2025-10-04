@@ -2,12 +2,13 @@
 
 namespace oddEvan\CapsuleUI;
 
-use Smolblog\Foundation\v2\Registry\Registerable;
+use Cavatappi\Foundation\Registry\Registerable;
+use Cavatappi\Foundation\Value;
 
 /**
  * A user interface component. Takes in arbitrary props and outputs HTML.
  */
-interface Component extends Registerable {
+interface Component extends Registerable, Value {
 	/**
 	 * Render the component to the screen using its props.
 	 *

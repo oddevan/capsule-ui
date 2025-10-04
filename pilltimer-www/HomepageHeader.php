@@ -4,26 +4,31 @@ namespace oddEvan\PillTimer\Website;
 
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\Component\KeyFromClassNameKit;
+use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 
-class HomepageHeader implements Component {
+class HomepageHeader implements StyledComponent {
 	use KeyFromClassNameKit;
+
+	public static function styles(): string {
+		return <<<EOF
+		header.homepage-header {
+			background: url(/wedge.svg);
+			background-size: cover;
+			background-position: bottom;
+			margin-bottom: 2rem;
+			padding-top: 5rem;
+			padding-bottom: 3rem;
+			position: relative;
+			z-index: 2000;
+			transform: translate3d(0px, 0px, 1px);
+		}
+		EOF;
+	}
 
 	public function render(?ComponentEngine $engine = null): void {
 		?>
-<header
-	style="
-		background: url(/wedge.svg);
-		background-size: cover;
-		background-position: bottom;
-		margin-bottom: 2rem;
-		padding-top: 5rem;
-		padding-bottom: 3rem;
-		position: relative;
-		z-index: 2000;
-		transform: translate3d(0px, 0px, 1px);
-	"
->
+<header class="homepage-header">
 	<div class="container">
 		<div class="row justify-content-between">
 			<div class="col-sm col-xl-6" style="padding-top: 10rem">

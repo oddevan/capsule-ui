@@ -2,11 +2,11 @@
 
 namespace oddEvan\UI;
 
-use Smolblog\Foundation\v2\Module as V2Module;
-use Smolblog\Foundation\v2\Module\FileDiscoveryKit;
-use Smolblog\Foundation\v2\Module\ModuleKit;
+use Cavatappi\Foundation\Module as CavatappiModule;
+use Cavatappi\Foundation\Module\FileDiscoveryKit;
+use Cavatappi\Foundation\Module\ModuleKit;
 
-class Module implements V2Module {
+class Module implements CavatappiModule {
 	use FileDiscoveryKit;
 	use ModuleKit;
 

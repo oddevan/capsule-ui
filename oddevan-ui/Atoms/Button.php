@@ -2,16 +2,19 @@
 
 namespace oddEvan\UI\Atoms;
 
+use Cavatappi\Foundation\Exceptions\InvalidValueProperties;
+use Cavatappi\Foundation\Validation\Validated;
+use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
-use Smolblog\Foundation\Exceptions\InvalidValueProperties;
-use Smolblog\Foundation\v2\Value\Traits\Validated;
 
 use function oddEvan\CapsuleUI\attributes;
 use function oddEvan\CapsuleUI\esc;
 
 class Button implements Component, StyledComponent, Validated {
+	use ValueKit;
+
 	public static function getKey(): string {
 		return 'button';
 	}

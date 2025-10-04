@@ -2,11 +2,14 @@
 
 namespace oddEvan\UI;
 
+use Cavatappi\Foundation\Value\ValueKit;
 use oddEvan\CapsuleUI\Component;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use oddEvan\CapsuleUI\ComponentEngine;
 
 class AppShell implements Component, StyledComponent {
+	use ValueKit;
+
 	public static function getKey(): string {
 		return 'app-shell';
 	}

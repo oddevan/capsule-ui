@@ -2,10 +2,10 @@
 
 namespace oddEvan\CapsuleUI;
 
+use Cavatappi\Foundation\Registry\Registry;
+use Cavatappi\Foundation\Registry\RegistryKit;
+use Cavatappi\Foundation\Service;
 use oddEvan\CapsuleUI\Component\StyledComponent;
-use Smolblog\Foundation\Service;
-use Smolblog\Foundation\v2\Registry\Registry;
-use Smolblog\Foundation\v2\Registry\RegistryKit;
 use Throwable;
 
 use function array_filter;
