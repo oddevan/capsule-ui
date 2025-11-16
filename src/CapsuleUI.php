@@ -12,7 +12,10 @@ class CapsuleUI implements Module {
 	use ModuleKit;
 
 	private static function serviceMapOverrides(): array {
-		return [];
+		return [
+			ComponentRegistry::class => [],
+			ComponentEngine::class => ComponentRegistry::class,
+		];
 	}
 
 	public static function createRegistry(string ...$modules) {

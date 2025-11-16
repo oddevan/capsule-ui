@@ -5,6 +5,7 @@ namespace oddEvan\CapsuleUI;
 use Cavatappi\Foundation\Registry\Registry;
 use Cavatappi\Foundation\Registry\RegistryKit;
 use Cavatappi\Foundation\Service;
+use oddEvan\CapsuleUI\Component\GenericHtmlComponent;
 use oddEvan\CapsuleUI\Component\StyledComponent;
 use Throwable;
 
@@ -20,6 +21,16 @@ class ComponentRegistry implements Service, Registry, ComponentEngine {
 	}
 
 	/**
+	 * Construct the service.
+	 *
+	 * @param MarkdownProvider|null $md Optional MarkdownProvider to generate a 'markdown' component.
+	 */
+	public function __construct(
+		private ?MarkdownProvider $md = null,
+	) {
+	}
+
+	/**
 	 * Get the class name for a given component key.
 	 *
 	 * @param string $key Key for the component.
@@ -32,7 +43,11 @@ class ComponentRegistry implements Service, Registry, ComponentEngine {
 	public function make(string $component, mixed ...$props): Component {
 		$componentClass = $this->componentClass($component);
 		if (!isset($componentClass)) {
-			throw new ComponentError("ComponentRegistry::make called for unregistered component {$component}.");
+			if ($component !== 'markdown' || !isset($this->md)) {
+				throw new ComponentError("ComponentRegistry::make called for unregistered component {$component}.");
+			}
+
+			return new GenericHtmlComponent($this->md->convertMarkdown(...$props));
 		}
 
 		try {
