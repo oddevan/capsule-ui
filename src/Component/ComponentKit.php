@@ -14,7 +14,7 @@ trait ComponentKit {
 	public static function getKey(): string {
 		// Via https://stackoverflow.com/a/42665007.
 		return strtolower(
-			implode('-', preg_split('/(?=[A-Z])/', StringUtils::dequalifyClassName(static::class)) ?: [])
+			implode('-', preg_split('/(?=[A-Z])/', lcfirst(StringUtils::dequalifyClassName(static::class))) ?: [])
 		);
 	}
 }
