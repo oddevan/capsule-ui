@@ -23,6 +23,6 @@ function esc(string $text): string {
 	return htmlspecialchars($text, flags: ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5, double_encode: false);
 }
 
-function classes(string ...$classes): string {
-	return implode(' ', $classes);
+function classes(string|null ...$classes): string {
+	return implode(' ', array_filter($classes));
 }
