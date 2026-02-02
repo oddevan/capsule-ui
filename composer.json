@@ -6,7 +6,8 @@
   ],
   "require": {
     "psr/log": "^3.0",
-    "cavatappi/foundation": "^0.1.0"
+    "cavatappi/foundation": "^0.2.1",
+    "crell/serde": "@dev"
   },
   "require-dev": {
     "phpunit/phpunit": "^11|^12.3",
